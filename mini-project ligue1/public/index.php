@@ -34,6 +34,12 @@
 </style>
 
 <body>
+    <?php
+        session_start();
+        if (isset($_SESSION['mail'])){
+            header('Location: ../view/accueil.php');
+        }
+    ?>
     <section class="container">
         <div class="row">
             <div class="col text-center mb-3">

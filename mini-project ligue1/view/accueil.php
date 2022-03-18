@@ -377,6 +377,19 @@
     </style>
     <section>
         <div class="container">
+    <?php        
+    session_start();
+    if (isset($_SESSION['mail'])){?>
+        <div class="row">
+            <div class="col mt-2 text-center">
+                <p><i>Vous êtes connecté(e) sur le compte <strong><?=$_SESSION['mail']?></strong></i> </p><a href="../controller/sessionEnd.php" class="btn btn-danger">Se déconnecter</a>
+            </div>
+        </div>
+    <?php }
+    else {
+        header('location:../public/index.php');
+    }
+    ?>
             <table>
                 <thead>
                     <tr>
